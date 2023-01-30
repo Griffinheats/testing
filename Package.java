@@ -8,6 +8,7 @@ public class Package
     {
         this.packageNumber = packageNumber;
         widgets = new Widget[size];
+        nextWidget = 0;
     }
 
     public String getPackageNumber()
