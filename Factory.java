@@ -6,8 +6,6 @@ public class Factory
     private static String[] models = {"bananas", "greenbeans", "pumpkin pie"};
     public static void main(String[] args)
     {
-        String colors[] = {"Red", "Green", "Yellow", "Blue"};
-        String models[] = {"green beans", "bananas"};
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
 
@@ -20,12 +18,12 @@ public class Factory
             Package p = new Package("P" + packageCounter, numWidgets);
             for(int i = 1; i < numWidgets; i++)
             {
-                int numC = (int)(Math.random()*6);
+                int numC = (int)(Math.random()*5);
                 String color = colors[numC];
-                int numM = (int)(Math.random()*4);
+                int numM = (int)(Math.random()*3);
                 String model = models[numM];
-
                 Widget w = new Widget(color, model, "P" + packageCounter + "W" + i);
+                p.addWidget(w);
             }
             System.out.println(p.toString());
             System.out.println("Enter the number of widgets for the next package or enter 0 to end: ");
